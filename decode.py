@@ -1,10 +1,9 @@
 # from base to decimal 
-
 import string
 
 d={}
 
-def init(base):
+def init2(base):
     l=[str(x) for x in range(min(base,10))]
     l=''.join(l)
     if base>10:
@@ -12,17 +11,17 @@ def init(base):
     count=0
     for i in l:
         d[i]=count;count+=1
-    return d
+    print(d)
 
 def decode(n,base):
-    d=init(base)
+    init2(base)
     n=n[::-1]
     sum=0
     for i in range(len(n)):
         sum+=int(base**i)*int(d[n[i]])
-    print(sum)
+    return str(sum)
 
 base=30
-n='NP26'
-decode(n,base)
-
+n='N0JO'
+x=decode(n,base)
+print(x)
